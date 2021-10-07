@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./index.js"></script>
+    <script defer src="./data_struc.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h2>Blog Posts</h2>
+
+    <article
+      class="media content-section element-container"
+      class="ow-anywhere"
+    >
+      <div class="media-body" class="ow-anywhere">
+        <h4><a href="{% url 'article-detail' post.pk %}">Talking Movies</a></h4>
+
+        <p>
+          <a href="{% url 'category' post.category|slugify %}">Genre</a> | james
+          gilbert | 23-32-1234
+        </p>
+
+        <div id="edit-delete">
+            <small >
+              <a href="{% url 'update_post' post.pk %}">(Edit)</a> 
+    
+                        <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+                    <!-- {% endif %}
+                {% endif %} -->
+            </small>
+        </div>
+        <br />
+        <p class="ow-anywhere article-content" class="">
+          Rice is the world’s most consumed commodity. Total global rice
+          expenditure in 2020 was $350 billion. To put things in perspective,
+          total global crude oil expense in 2020 was just four times that amount
+          at $1.3 trillion. This means for every $100 spent on crude oil in
+          2020, $25 was spent on rice.
+        </p>
+
+        <div class="img-container">
+          <img src="./images/Asantewaa.jpg" alt="sample" />
+        </div>
+      </div>
+    </article>
+
+    <!-- <hr> -->
+  </body>
+</html>
